@@ -1,17 +1,15 @@
 # BankBot: Conversational Banking Assistant
 
-A production-ready banking assistant that uses LangChain and local LLMs (via Ollama) to provide a natural language interface for banking operations.
+An intelligent and useful banking assistant that uses LangChain and local LLMs (via Ollama) to provide a natural language interface for banking operations.
 
 ## Features
 
-- **Natural Language Processing**: Understands commands like "add 100 euros" or "what's my balance?"
+- **Natural Language Processing**: Talks naturally and understands commands like "add 100 euros" or "what's my balance?"
 - **Banking Operations**:
   - Check account balance
   - Deposit money
   - Withdraw money
   - Currency conversion (EUR to USD)
-- **Modular Architecture**: Clean separation of concerns
-- **Configurable**: Easy to modify settings and prompts
 
 ## Prerequisites
 
@@ -25,7 +23,7 @@ A production-ready banking assistant that uses LangChain and local LLMs (via Oll
    # Install Ollama
    curl -fsSL https://ollama.com/install.sh | sh
    
-   # Download the model
+   # Download the model (i.e. gemma2)
    ollama pull gemma2:2b
    ```
 
@@ -45,6 +43,8 @@ A production-ready banking assistant that uses LangChain and local LLMs (via Oll
 
 3. **Install dependencies**:
    ```bash
+   pip install -r requirements.txt
+   OR
    pip install -e .
    ```
 
@@ -63,17 +63,20 @@ A production-ready banking assistant that uses LangChain and local LLMs (via Oll
 3. **Example usage**:
    ```
    BankBot: Welcome! How can I assist you today?
+   > Hi, how are you today?
+   Hello! I am fine, thanks for asking. How about you? I am your banking assistant, how may I help you?
+   
    > What's my balance?
    Your current balance is 0.00 EUR
    
-   > Deposit 100 euros
+   > Hmm, I am broke. Let's deposit 100 euros
    Successfully deposited 100.00 EUR. New balance: 100.00 EUR
    
-   > Withdraw 30
+   > Acually, I need some cash with me. Withdraw 30
    Withdrew 30.00 EUR. New balance: 70.00 EUR
    
-   > Convert 50 EUR to USD
-   50.00 EUR = 55.00 USD (rate: 1.1)
+   > I wonder how much USD would that be
+   30.00 EUR = 33.00 USD (rate: 1.1)
    
    > exit
    Goodbye! Your final balance is 70.00 EUR
